@@ -17,12 +17,12 @@ rm -rf ${OUT}/${DATE_LOG}/${DOMAIN}/screenshots/* ## Cleaning old file
 		## Check Folder Results	
 			[[ ! -e "${OUT}/${DATE_LOG}/${DOMAIN}/screenshots" ]] \
 				&& mkdir -p "${OUT}/${DATE_LOG}/${DOMAIN}/screenshots"||true
-		${_GOWITNESS} file --source ${OUT}/${DATE_LOG}/${DOMAIN}/${RESULT_HTTPROBE} --log-level fatal --destination ${OUT}/${DATE_LOG}/${DOMAIN}/screenshots/ --db ${OUT}/${DATE_LOG}/${DOMAIN}/screenshots/gowitness.db
+		${_GOWITNESS} file -f ${OUT}/${DATE_LOG}/${DOMAIN}/${RESULT_HTTPROBE} --disable-logging -P ${OUT}/${DATE_LOG}/${DOMAIN}/screenshots/ --db-path ${OUT}/${DATE_LOG}/${DOMAIN}/screenshots/gowitness.db
 
 		## Reports
-		pushd ${OUT}/${DATE_LOG}/${DOMAIN}/screenshots/ > /dev/null
-		${_GOWITNESS} report generate --log-level fatal 
-		popd > /dev/null
+		# pushd ${OUT}/${DATE_LOG}/${DOMAIN}/screenshots/ > /dev/null
+		# ${_GOWITNESS} report generate --log-level fatal 
+		# popd > /dev/null
 
 		
 		## Counting Successfully screenshoot

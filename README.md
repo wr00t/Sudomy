@@ -166,7 +166,8 @@ $ python3 -m pip install -r requirements.txt
 ```bash
 # Linux
 apt-get update
-apt-get install jq nmap phantomjs npm chromium parallel
+# apt-get install jq nmap phantomjs npm chromium parallel
+apt-get install jq nmap npm chromium parallel
 npm i -g wappalyzer wscat
 
 # Mac
@@ -179,6 +180,15 @@ npm i -g wappalyzer wscat
 All you would need is an installation of the latest Google Chrome or Chromium 
 Set the PATH in rc file for GNU grep changes
 ```
+
+Other dependencies:
+
+- [dnsprobe](https://github.com/projectdiscovery/dnsprobe)
+- [gobuster](https://github.com/OJ/gobuster)
+- [webanalyze](https://github.com/rverton/webanalyze)
+- [cf-check](https://github.com/dwisiswant0/cf-check)
+- [gowitness](https://github.com/sensepost/gowitness)
+- [subjack](https://github.com/haccer/subjack)
 
 ## Running in a Docker Container
 ```bash

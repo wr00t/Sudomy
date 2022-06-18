@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-import censys.certificates
-import censys.ipv4
+# import censys.certificates
+# import censys.ipv4
+from censys.search import CensysCertificates
 import censys
 import sys
 import cli
@@ -11,7 +12,7 @@ import time
 # Finds subdomains of a domain using Censys API
 def find_subdomains(domain, api_id, api_secret):
     try:
-        censys_certificates = censys.certificates.CensysCertificates(api_id=api_id, api_secret=api_secret)
+        censys_certificates = CensysCertificates(api_id=api_id, api_secret=api_secret)
         certificate_query = 'parsed.names: %s' % domain
         certificates_search_results = censys_certificates.search(certificate_query, fields=['parsed.names'])
         
